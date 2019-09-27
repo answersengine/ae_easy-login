@@ -1,0 +1,12 @@
+/.byebug*
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/pkg/
+/spec/reports/
+/tmp/
+/certs/
+/checksum/
+/vendor/
+/Gemfile.lock
