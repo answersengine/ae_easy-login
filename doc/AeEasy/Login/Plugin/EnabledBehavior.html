@@ -366,12 +366,12 @@
       <pre class="lines">
 
 
-40
 41
-42</pre>
+42
+43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ae_easy/login/plugin/enabled_behavior.rb', line 40</span>
+      <pre class="code"><span class="info file"># File 'lib/ae_easy/login/plugin/enabled_behavior.rb', line 41</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_fix_session'>fix_session</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Must implement &quot;fix_session&quot; function.</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -487,13 +487,15 @@ AeEasy::Login::Flow#initialize_hook_login_flow).</p>
 24
 25
 26
-27</pre>
+27
+28</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/ae_easy/login/plugin/enabled_behavior.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_salt'>salt</span>
   <span class='id identifier rubyid_old_cookie'>old_cookie</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>vars</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_login_flow'>login_flow</span><span class='period'>.</span><span class='id identifier rubyid_vars_key'>vars_key</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_old_cookie'>old_cookie</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_old_cookie'>old_cookie</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
   <span class='const'>Digest</span><span class='op'>::</span><span class='const'>SHA1</span><span class='period'>.</span><span class='id identifier rubyid_hexdigest'>hexdigest</span> <span class='id identifier rubyid_old_cookie'>old_cookie</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -558,12 +560,12 @@ AeEasy::Login::Flow#initialize_hook_login_flow).</p>
       <pre class="lines">
 
 
-32
 33
-34</pre>
+34
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ae_easy/login/plugin/enabled_behavior.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/ae_easy/login/plugin/enabled_behavior.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_valid_session?'>valid_session?</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Must implement &quot;session_valid?&quot; function.</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -578,7 +580,7 @@ AeEasy::Login::Flow#initialize_hook_login_flow).</p>
 </div>
 
       <div id="footer">
-  Generated on Fri Sep 27 07:10:16 2019 by
+  Generated on Fri Sep 27 22:00:26 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.20 (ruby-2.5.3).
 </div>
