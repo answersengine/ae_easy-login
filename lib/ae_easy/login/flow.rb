@@ -230,11 +230,13 @@ module AeEasy
       # @param [Hash] held_page Held page to fix.
       def fix_page! held_page
         clean_page_response! held_page
-        held_page['cookie'] = merge_cookie held_page['cookie']
-        held_page['headers'] = {} unless held_page.has_key? 'headers'
-        if held_page['headers'].has_key? 'Cookie'
-          held_page['headers']['Cookie'] = merge_cookie held_page['headers']['Cookie']
-        end
+        cookie_key = held_page.has_key?(:cookie) ? :cookie : 'cookie'
+        headers_key = held_page.has_key?(:headers) ? :headers : 'headers'
+        held_page[cookie_key] = merge_cookie held_page[cookie_key]
+        held_page[headers_key] = {} unless held_page.has_key? headers_key
+        header_cookie_key = held_page[headers_key].has_key?('cookie') ? 'cookie' : 'Cookie'
+        held_page[headers_key][header_cookie_key] = '' unless  held_page[headers_key].has_key? header_cookie_key
+        held_page[headers_key][header_cookie_key] = merge_cookie held_page[headers_key][header_cookie_key]
         add_vars! held_page
         custom_fix! held_page
       end
