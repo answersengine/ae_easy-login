@@ -19,9 +19,11 @@ Require gem:
 
 Code documentation can be found [here](http://rubydoc.org/gems/ae_easy-login/frames).
 
-## Before you start
+## How to implement
 
-It is true that most user cases for `ae_easy-login` gem applies to websites with login pages and create sessions, so we will cover this scenario within our `How to use` section.
+### Before you start
+
+It is true that most user cases for `ae_easy-login` gem applies to websites with login pages and create sessions, so we will cover this scenario on our example.
 
 Therefore, `ae_easy-login` gem is designed to handle **ANY** kind of session recovery, even those that doesn't requires a login form `POST` by just changing the flow from:
 
@@ -45,7 +47,7 @@ Here are some user case examples that can be fixed by `ae_easy-login` gem:
 
 Feel confident to expirement with it until it fit all your needs.
 
-## How to implement
+### Adding ae_easy-login to your project
 
 Let's assume a simple project implementing `ae_easy` like the one described on [ae_easy README.md](https://github.com/answersengine/ae_easy/blob/master/README.md) that scrapers your website.
 
